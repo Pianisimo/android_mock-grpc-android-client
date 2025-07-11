@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+option go_package = "./proto";
+
+message DeviceInfo {
+  string serial_number = 1;
+  string ip_address = 2;
+  string status = 3;
+  string manufacturer = 4;
+}
+
+message DeviceRequest{
+  string cpe_id = 1;
+}
+
+message DeviceResponse {
+  DeviceInfo device = 1;
+}
+
+service DeviceService {
+  rpc GetDeviceInfo(DeviceRequest) returns (DeviceResponse);
+}
