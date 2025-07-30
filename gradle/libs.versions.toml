@@ -2,33 +2,31 @@
 
 # plugins
 agp = "8.11.1"
-kotlin = "2.1.21"
+kotlin = "2.2.0"
+protobufGradlePlugin = "0.9.5"
 
 # AndroidX
 core = "1.16.0"
-lifecycle = "2.9.1"
+lifecycle = "2.9.2"
 constraintlayoutCompose = "1.1.1"
 
 # compose
 activityCompose = "1.10.1"
-composeBom = "2025.06.00"
+composeBom = "2025.07.00"
 
 # kotlin
 kotlinxCollectionsImmutable = "0.4.0"
-kotlinxSerializationJson = "1.8.1"
+kotlinxSerializationJson = "1.9.0"
+
+# gRPC
+protoc = "4.31.1"
+protocGenGrpcKotlin = "1.4.3"
+grpcStub = "1.74.0"
 
 # testing
 junit = "4.13.2"
 junitVersion = "1.2.1"
 espressoCore = "3.6.1"
-protobufGradlePlugin = "0.9.5"
-protoc = "4.31.1"
-protocGenGrpcKotlin = "1.4.3"
-grpcStub = "1.73.0"
-grpcProtobufLite = "1.73.0"
-grpcOkhttp = "1.73.0"
-protobufKotlinLite = "4.31.1"
-grpcKotlinStub = "1.4.3"
 
 [libraries]
 
@@ -52,22 +50,23 @@ androidx-material3 = { group = "androidx.compose.material3", name = "material3" 
 kotlinx-collections-immutable = { group = "org.jetbrains.kotlinx", name = "kotlinx-collections-immutable", version.ref = "kotlinxCollectionsImmutable" }
 kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlinxSerializationJson" }
 
+# gRPC
+protoc = { group = "com.google.protobuf", name = "protoc", version.ref = "protoc" }
+protoc-gen-grpc-java = { group = "io.grpc", name = "protoc-gen-grpc-java", version.ref = "grpcStub" }
+grpc-protobuf = { group = "io.grpc", name = "grpc-protobuf", version.ref = "grpcStub" }
+protoc-gen-grpc-kotlin = { group = "io.grpc", name = "protoc-gen-grpc-kotlin", version.ref = "protocGenGrpcKotlin" }
+grpc-stub = { group = "io.grpc", name = "grpc-stub", version.ref = "grpcStub" }
+grpc-protobuf-lite = { group = "io.grpc", name = "grpc-protobuf-lite", version.ref = "grpcStub" }
+grpc-okhttp = { group = "io.grpc", name = "grpc-okhttp", version.ref = "grpcStub" }
+protobuf-kotlin-lite = { group = "com.google.protobuf", name = "protobuf-kotlin-lite", version.ref = "protoc" }
+grpc-kotlin-stub = { group = "io.grpc", name = "grpc-kotlin-stub", version.ref = "protocGenGrpcKotlin" }
+
 # testing
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
 androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
 androidx-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
-protoc = { group = "com.google.protobuf", name = "protoc", version.ref = "protoc" }
-protoc-gen-grpc-java = { group = "io.grpc", name = "protoc-gen-grpc-java", version = "1.62.2" }
-grpc-protobuf = { group = "io.grpc", name = "grpc-protobuf", version = "1.69.1" }
-protoc-gen-grpc-kotlin = { group = "io.grpc", name = "protoc-gen-grpc-kotlin", version.ref = "protocGenGrpcKotlin" }
-grpc-stub = { group = "io.grpc", name = "grpc-stub", version.ref = "grpcStub" }
-grpc-protobuf-lite = { group = "io.grpc", name = "grpc-protobuf-lite", version.ref = "grpcProtobufLite" }
-grpc-okhttp = { group = "io.grpc", name = "grpc-okhttp", version.ref = "grpcOkhttp" }
-protobuf-kotlin-lite = { group = "com.google.protobuf", name = "protobuf-kotlin-lite", version.ref = "protobufKotlinLite" }
-grpc-kotlin-stub = { group = "io.grpc", name = "grpc-kotlin-stub", version.ref = "grpcKotlinStub" }
-
 
 [plugins]
 

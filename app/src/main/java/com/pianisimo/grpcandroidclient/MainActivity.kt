@@ -21,6 +21,7 @@ import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Divider
+import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Scaffold
@@ -40,7 +41,7 @@ import com.pianisimo.grpcandroidclient.utils.MyDeviceServiceGRPC
 import java.net.URI
 
 class MainActivity : ComponentActivity() {
-    private val address = "18.221.226.156"
+    private val address = "3.142.45.96"
     private val port = 50051
     private val uri = URI("grpc://$address:$port")
     private val myDeviceServiceGRPC by lazy { MyDeviceServiceGRPC(uri) }
@@ -168,7 +169,7 @@ fun DeviceInfoDisplay(
                         fontWeight = FontWeight.Bold
                     )
 
-                    Divider()
+                    HorizontalDivider()
 
                     DeviceInfoRow(label = "Serial Number", value = deviceInfo.serialNumber)
                     DeviceInfoRow(label = "IP Address", value = deviceInfo.ipAddress)
