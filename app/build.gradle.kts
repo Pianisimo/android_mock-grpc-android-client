@@ -5,7 +5,6 @@ plugins {
     alias(libs.plugins.jetbrains.kotlin.android)
     alias(libs.plugins.compose.compiler)
     alias(libs.plugins.kotlinSerialization)
-    alias(libs.plugins.protobuf.gradle.plugin)
 }
 
 android {
@@ -45,43 +44,6 @@ android {
     }
 }
 
-protobuf {
-    protoc {
-        artifact = libs.protoc.asProvider().get().toString()
-    }
-    plugins {
-        create("java") {
-            artifact = libs.protoc.gen.grpc.java.get().toString()
-        }
-        create("grpc") {
-            artifact = libs.protoc.gen.grpc.java.get().toString()
-        }
-        create("grpckt") {
-            artifact = libs.protoc.gen.grpc.kotlin.get().toString() + ":jdk8@jar"
-        }
-    }
-    generateProtoTasks {
-        all().forEach {
-            it.plugins {
-                create("java") {
-                    option("lite")
-                }
-                create("grpc") {
-                    option("lite")
-                }
-                create("grpckt") {
-                    option("lite")
-                }
-            }
-            it.builtins {
-                create("kotlin") {
-                    option("lite")
-                }
-            }
-        }
-    }
-}
-
 dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
@@ -92,21 +54,11 @@ dependencies {
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
     implementation(libs.kotlinx.collections.immutable)
-    implementation(libs.kotlinx.serialization.json)
     implementation(libs.androidx.lifecycle.runtime.compose)
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
     implementation(libs.androidx.constraintlayout.compose)
 
-
-    implementation(libs.protoc)
-    implementation(libs.protoc.gen.grpc.kotlin)
-    implementation(libs.protoc.gen.grpc.java)
-    implementation(libs.grpc.stub)
-    implementation(libs.grpc.protobuf.lite)
-    implementation(libs.grpc.okhttp)
-    implementation(libs.protobuf.kotlin.lite)
-    implementation(libs.grpc.kotlin.stub)
-
+    implementation(libs.grpc.device.service)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

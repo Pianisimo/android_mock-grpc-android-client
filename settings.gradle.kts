@@ -16,9 +16,10 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        mavenLocal()
     }
 }
 
 rootProject.name = "GRPC Android Client"
 include(":app")
- 
+include(":myGRPCWrapper")
