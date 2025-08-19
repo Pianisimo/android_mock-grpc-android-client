@@ -60,7 +60,7 @@ class MyDeviceServiceGRPC(uri: URI) : Closeable {
                                     serialNumber = protoDeviceInfo.serialNumber,
                                     ipAddress = protoDeviceInfo.ipAddress,
                                     status = protoDeviceInfo.status,
-                                    manufacturer = protoDeviceInfo.manufacturer
+                                    manufacturer = protoDeviceInfo.manufacturer,
                                 )
                                 Log.d(TAG, "Updated device info: ${deviceInfoState.value}")
                             } else {

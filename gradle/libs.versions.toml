@@ -1,7 +1,7 @@
 [versions]
 
 # plugins
-agp = "8.12.0"
+agp = "8.12.1"
 kotlin = "2.2.0"
 protobufGradlePlugin = "0.9.5"
 
